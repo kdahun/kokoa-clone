@@ -1,0 +1,9 @@
+input{
+    border: 1px solid wheat;
+}
+input:required{
+    border-color:tomato;
+}
+input[placeholder~="name"]{
+    background-color: thistle;
+}

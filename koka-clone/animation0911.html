@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @keyframes superSexyCoinflip {
+                from{
+                    transform: rotateX(0);
+                }to{
+                    transform: rotateX(360deg);
+                }
+                
+            }
+            @keyframes moveReturn{
+                0%{
+                    transform:rotateY(0);
+                }
+                50%{
+                    transform:rotateY(180deg) translateY(200px);
+                }
+                100%{
+                    transform:rotateY(0);
+                }
+            }
+            img{
+                border:3px solid black;
+                border-radius: 20%;
+                
+            }
+
+            #infinite {
+                animation: superSexyCoinflip 2s ease-in-out infinite;
+            }
+            #persent{
+                animation: moveReturn 2s ease-in-out infinite;
+            }
+
+            .container{
+                /* 이 속성은 .container 클래스에 속한 텍스트 블록을 가로로 중앙 정렬한다 
+                즉 텍스트가 화면의 중앙에 오도록 설정한다.*/
+                text-align: center; 
+
+                background-color: #e74c3c;
+
+                /* 컨테이너 내용의 내용이 컨테이너를 넘치는 경우 넘치는 부분을 숨김 처리한다.
+                이렇게 함으로써, 내용이 컨테이너 영역을 벗어나지 않도록 한다. */
+                overflow:hidden;
+
+                /* 컨테이너를 Flexbox 컨테이너로 만든다. Flex는 요소를 레이아웃하기 위한 효율적인 방법을 제공하며,
+                자식 요소를 가로 또는 세로 중앙 정렬하는 데 사용할 수 있다. */
+                display:flex;
+
+                /* container 클래스 내의 내용을 수평으로 중앙 정렬한다. flexbox 레이아웃을 사용하므로 내용이 화면 중앙에 위치하게된다. */
+                justify-content: center;
+            }
+
+            .box:nth-child(2n-1){
+                background-color:rgba(0,0,0,0.05);
+            }
+
+            .box{
+                height: 200px;
+                width: 33.3%;
+            }
+
+            .box p{
+                color: #777;
+
+                /* 텍스트의 폰트를 Loto 또는 Helvetica Neue로 지정한다.
+                웹 페이지에서 사용 가능한 폰트 중 하나를 선택한다. */
+                font-family: Loto,"Helvetica Neue";
+
+                /* 폰트 두께 */
+                font-weight: 300;
+
+                /* p요소를 절대 위치로 설정한다. 이것은 부모 요소에 상대적으로 위치하지 않고, 레이아웃에서 겹치게 만든다. */
+                position:absolute;
+
+                font-size:20px;
+
+                /* p요소의 너비를 부모 요소의 33%로 설정한다. */
+                width:33%;
+
+                height:25px;
+
+                /* 텍스트를 가운데 정렬한다 */
+                text-align:center;
+
+                /* p 요소의 하단 위치를 부모 요소의 하단에 배치 */
+                bottom: 0px;
+
+                /* 요소 주위의 마진을 모두 0으로 설정 */
+                margin: 0;
+
+                /* p 요소의 상단 위치를 부모 요소로부터 160px아래에 배치 */
+                top: 160px;
+
+                background-color:#fff;
+
+                opacity:0;
+                text-transform: uppercase;
+                transition: all .2s ease;
+            }
+
+            .box:hover p{
+                bottom:0px;
+                top:175px;
+                opacity:1;
+                transition: all 2. ease;
+                z-index: 2;
+            }
+/* MEDIA QUERIES */
+            @media (max-width: 700px){
+                .box{
+                    width: 50%;
+                }
+
+                .box:nth-child(2n-1){
+                    background-color: inherit;
+                }
+
+                .box:nth-child(4n),.box:nth-child(4n-3) {
+                    background-color: rgba(0,0,0,0.05);
+                }
+
+            }
+
+            @media (max-width: 420px){
+                .box{
+                    width: 100%;
+                }
+
+                .box:nth-child(4n),.box:nth-child(4n-3){
+                    background-color: inherit;
+                }
+
+                .box:nth-child(2n-1){
+                    background-color:rgba(0,0,0,0.05);
+                }
+            }
+            /* ------------ Clock -------------- */
+            .clock {
+                border-radius: 60px;
+                border: 3px solid #fff;
+                height: 80px;
+                width: 80px;
+                position: relative;
+                margin: 0 auto; /* 수평 가운데 정렬을 위해 추가 */
+                top: 50%; /* 수직 가운데 정렬을 위해 추가 */
+                transform: translateY(-50%); /* 수직 가운데 정렬을 위해 추가 */
+            }
+            .clock:after{
+                content: "";
+                position: absolute;
+                background-color: #fff;
+                top:2px;
+                left: 48%;
+                height: 38px;
+                width: 4px;
+                border-radius: 5px;
+                -webkit-transform-origin: 50% 97%;
+                    transform-origin: 50% 97%;
+                -webkit-animation: grdAiguille 2s linear infinite;
+                    animation: grdAiguille 2s linear infinite;
+            }
+
+            @-webkit-keyframes grdAiguille{
+                0%{-webkit-transform:rotate(0deg);}
+                100%{-webkit-transform:rotate(360deg);}
+            }
+
+            @keyframes grdAiguille{
+                0%{transform:rotate(0deg);}
+                100%{transform:rotate(360deg);}
+            }
+
+            .clock:before{
+                content: "";
+                position: absolute;
+                background-color: #fff;
+                top:6px;
+                left: 48%;
+                height: 35px;
+                width: 4px;
+                border-radius: 5px;
+                -webkit-transform-origin: 50% 94%;
+                    transform-origin: 50% 94%;
+                -webkit-animation: ptAiguille 12s linear infinite;
+                    animation: ptAiguille 12s linear infinite;
+            }
+
+            @-webkit-keyframes ptAiguille{
+                0%{-webkit-transform:rotate(0deg);}
+                100%{-webkit-transform:rotate(360deg);}
+            }
+
+            @keyframes ptAiguille{
+                0%{transform:rotate(0deg);}
+                100%{transform:rotate(360deg);}
+            }
+
+            
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <div class = "clock"></div>
+                <p>Clock</p>
+            </div>
+
+            <div class="box">
+                <img id= "infinite" src="image/m.svg">
+            </div>
+
+            <div class="box">
+                <img id="persent" src="image/m.svg">
+            </div>
+            
+            
+        </div>
+        
+    </body>
+</html>
