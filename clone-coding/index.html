@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>welcome to KoKoa Clone</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div class ="status-bar">
+            <div class="status-bar__column">
+                <span>No Service</span>
+                <i class="fa-solid fa-wifi"></i>
+                  
+            </div>
+            <div class="status-bar__column">
+                <span>18:43</span>
+            </div>
+            <div class="status-bar__column">
+                <span>110%</span>
+                <i class="fa-solid fa-battery-three-quarters fa-la"></i>
+                  
+                <i class="fa-solid fa-bolt-lightning"></i>
+                  
+            </div>
+        </div>
+
+        <header class = "welcome-header">
+            <h1 class = "welcome-header__title">welcome to KoKoa Clone</h1>
+            <p class = "welcome-header__text ">If you have a KoKoa Account, log in with your email or phone number.</p>
+        </header>
+        <!-- action은 어떤 data를 어디에 보낼지 지정 -->
+        <!-- method는 post와 get 방식이 있다 -->
+        <!-- post는 백엔드 서버로 데이터 전송하는 것 -->
+        <!-- get은 url에 표시되어도 상관이 없는 것들로 구성? -->
+        <form action="friends.html" method="" id="login-form">
+            <input name="username" type="text" placeholder="Email or phone number">
+            <input name="password" type="password" placeholder="Password">
+            <input type="submit" value="Log In">
+            <a href="#">Find KoKoa Account or Password</a>
+        </form>
+
+
+        <script src="https://kit.fontawesome.com/80525a55e1.js" crossorigin="anonymous"></script>
+    </body>
+</html>
