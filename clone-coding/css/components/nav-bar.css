@@ -4,6 +4,7 @@
     width: 100%;
     background-color:#f9f9fa;
     padding: 20px 50px;
+    /* padding을 신경 안쓰게 해서 박스 크기를 안 늘려줌. */
     box-sizing: border-box;
     border-top:1px solid rgba(121,121,121,0.3);
 }
@@ -15,10 +16,37 @@
 
 .nav__link{
     color:inherit;
+    position:relative;
 }
 
 .status-bar{
     position:fixed;
     top:0;
     width:100%;
+}
+
+.nav__notification{
+    background-color: tomato;
+    width: 20px;
+    height:20px;
+    border-radius: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-weight: 600;
+    position:absolute;
+    left:20px;
+    bottom:15px;
+}
+
+.nav__dot{
+    background-color: tomato;
+    width:6px;
+    height:6px;
+    border-radius: 3px;
+    display: flex;
+    position: absolute;
+    left:30px;
+    bottom:25px;
 }
